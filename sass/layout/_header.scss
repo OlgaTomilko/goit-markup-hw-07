@@ -1,0 +1,127 @@
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: baseline;
+}
+
+.navigation-list {
+  display: flex;
+}
+
+.navigation-list-li:not(:last-child) {
+  margin-right: 50px;
+}
+
+.logo-first-word {
+  margin-right: 85px;
+}
+
+.header {
+  border-bottom: 1px solid #ececec;
+}
+
+.header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-address-list {
+  display: flex;
+}
+.header .header-mail-link {
+  display: flex;
+  align-items: center;
+  margin-right: 50px;
+}
+
+.header .header-tel-link {
+  display: flex;
+  align-items: center;
+}
+
+.logo-first-word,
+.logo-second-word {
+  font-family: $secondary-font;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.19;
+  letter-spacing: 0.03em;
+}
+
+.navigation-list-item,
+.header-mail-link,
+.header-tel-link {
+  font-weight: 500;
+  line-height: 1.14;
+  letter-spacing: 0.02em;
+  padding-top: 32px;
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.header-mail-link,
+.header-tel-link {
+  padding-bottom: 32px;
+}
+
+.address-icons {
+  fill: currentColor;
+  margin-right: 10px;
+}
+
+.address-container {
+  display: flex;
+  align-content: center;
+}
+
+.navigation-list-item::after {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 28px;
+
+  display: block;
+  content: " ";
+  height: 0;
+  background-color: $accent-color;
+}
+
+.navigation-list-item {
+  color: $title-dark-color;
+}
+.headline::after {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 28px;
+
+  display: block;
+  content: " ";
+  height: 4px;
+  background-color: $accent-color;
+  border-radius: 2px;
+}
+.headline {
+  color: $accent-color;
+}
+
+.logo-second-word {
+  color: $accent-color;
+}
+
+.logo-first-word {
+  color: $logo-color;
+}
+
+.header-mail-link,
+.header-tel-link {
+  color: $text-dark-color;
+}
+
+.navigation-list-item:hover,
+.navigation-list-item:focus,
+.header-mail-link:hover,
+.header-mail-link:focus,
+.header-tel-link:hover,
+.header-tel-link:focus {
+  color: $accent-color;
+}
