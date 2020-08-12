@@ -1,28 +1,25 @@
-.footer .container {
-  display: flex;
-}
-
 .footer {
   background: #2f303a;
+
+  .container {
+    display: flex;
+  }
+
+  .logo-first-word {
+    width: 153px;
+    margin-bottom: 20px;
+    color: $title-light-color;
+  }
 }
 
 .footer-logo-address {
-  margin-right: 69px;
   padding-top: 60px;
   padding-bottom: 60px;
-}
-
-.footer .logo-first-word {
-  margin-bottom: 20px;
+  margin-right: 69px;
 }
 
 .footer-address-list-item:not(:last-child) {
   margin-bottom: 9px;
-}
-
-.footer .logo-first-word {
-  color: $title-light-color;
-  width: 153px;
 }
 
 .footer-call {
@@ -32,9 +29,6 @@
 
 .call {
   margin-bottom: 20px;
-}
-
-.call {
   font-weight: 700;
   line-height: 1.14;
   letter-spacing: 0.03em;
@@ -46,24 +40,29 @@
   display: inline-block;
   width: 44px;
   height: 44px;
+  padding: 12px;
+
   border-radius: 50%;
   background-size: 20px;
-  padding: 12px;
   /* background-repeat: no-repeat;
   background-position: center; */
   background-color: rgba(255, 255, 255, 0.1);
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover,
+  &:focus {
+    background-color: $accent-color;
+  }
 }
 
-.social-links-background:hover,
-.social-links-background:focus {
-  background-color: $accent-color;
+.social-links-item:not(:last-child) {
+  margin-right: 10px;
 }
 
 .social-links-icon {
-  fill: #fff;
   width: 20px;
   height: 20px;
+  fill: #fff;
 }
 
 .footer-map-link {
@@ -99,35 +98,14 @@
   border: 1px solid rgba(255, 255, 255, 0.3);
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
   border-radius: 4px;
-}
 
-.input-email::placeholder {
-  font-size: 16px;
-  line-height: 1.25;
-  letter-spacing: 0.03em;
+  &::placeholder {
+    font-size: 16px;
+    line-height: 1.25;
+    letter-spacing: 0.03em;
 
-  color: rgba(255, 255, 255, 0.6);
-}
-
-.subscribe-button {
-  display: flex;
-  align-items: center;
-  width: 200px;
-  height: 50px;
-  padding: 10px 28px 10px 29px;
-  cursor: pointer;
-
-  font-family: $main-font;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 1.88;
-  letter-spacing: 0.06em;
-  color: $title-light-color;
-
-  background-color: $accent-color;
-  border-radius: 4px;
-  border: none;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    color: rgba(255, 255, 255, 0.6);
+  }
 }
 
 .icon-send {

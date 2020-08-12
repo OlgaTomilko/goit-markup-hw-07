@@ -1,21 +1,3 @@
-/* СЕКЦИЯ ГЕРОЙ */
-
-/* СЕКЦИЯ О НАС */
-
-/* СЕКЦИИ ОБЩЕЕ */
-
-/* СЕКЦИЯ ЧЕМ МЫ ЗАНИМАЕМСЯ */
-
-/* СЕКЦИЯ О КОМАНДЕ */
-
-/* НАШИ КЛИЕНТЫ */
-
-/* ПОДВАЛ */
-
-/* ФОРМА */
-
-/* СТРАНИЦА ПОРТФОЛИО */
-
 .filter-list {
   display: flex;
   justify-content: center;
@@ -29,10 +11,6 @@
   border: none;
 }
 
-/* .gallery-img {
-  width: 100%;
-} */
-
 .gallery-list {
   display: flex;
   flex-wrap: wrap;
@@ -42,19 +20,19 @@
   width: calc((100% - 60px) / 3);
   margin-right: 30px;
   margin-bottom: 30px;
-}
 
-.gallery-list-items:nth-child(3n) {
-  margin-right: 0;
-}
+  &:nth-child(3n) {
+    margin-right: 0;
+  }
 
-.gallery-list-items:nth-last-child(-n + 3) {
-  margin-bottom: 0;
-}
+  &:nth-last-child(-n + 3) {
+    margin-bottom: 0;
+  }
 
-.gallery-list-items:hover {
-  box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.16), 0px 4px 4px rgba(0, 0, 0, 0.06),
-    0px 1px 1px rgba(0, 0, 0, 0.12);
+  &:hover {
+    box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.16), 0px 4px 4px rgba(0, 0, 0, 0.06),
+      0px 1px 1px rgba(0, 0, 0, 0.12);
+  }
 }
 
 .gallery-list-subcontainer {
@@ -64,10 +42,6 @@
   border-bottom: 1px solid #eeeeee;
 }
 
-.gallery-list-titles {
-  margin-bottom: 4px;
-}
-
 .filter-list-button {
   font-family: $main-font;
   font-weight: 500;
@@ -75,25 +49,27 @@
   line-height: 1.62;
   text-align: center;
   letter-spacing: 0.03em;
+
   background: #f5f4fa;
   border-radius: 4px;
-  color: $title-dark-color;
+
   cursor: pointer;
 
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
 
-.filter-list-button:hover,
-.filter-list-button:focus {
-  color: $title-light-color;
-  background-color: $accent-color;
-  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.12), 0px 1px 2px rgba(0, 0, 0, 0.08),
-    0px 3px 1px rgba(0, 0, 0, 0.1);
+  &:hover,
+  &:focus {
+    color: $title-light-color;
+    background-color: $accent-color;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.12), 0px 1px 2px rgba(0, 0, 0, 0.08),
+      0px 3px 1px rgba(0, 0, 0, 0.1);
+  }
 }
 
 .gallery-list-titles {
+  margin-bottom: 4px;
   font-weight: 700;
   font-size: 18px;
   line-height: 2;
@@ -110,6 +86,11 @@
 }
 
 .gallery-list-text {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
   padding: 24px 63px;
 
   font-weight: 400;
@@ -118,28 +99,16 @@
   letter-spacing: 0.03em;
   color: $title-light-color;
   background: rgba(33, 150, 243, 0.9);
+
+  transform: translateY(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  .gallery-list-items:hover & {
+    transform: translateY(0);
+  }
 }
 
 .thumb {
   position: relative;
   overflow: hidden;
 }
-
-.gallery-list-text {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  /* opacity: 0; */
-
-  transform: translateY(100%);
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.gallery-list-items:hover .gallery-list-text {
-  /* opacity: 1; */
-  transform: translateY(0);
-}
-
-/* МОДАЛЬНОЕ ОКНО */

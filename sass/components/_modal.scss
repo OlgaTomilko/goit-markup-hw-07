@@ -8,10 +8,6 @@
   background: rgba(0, 0, 0, 0.2);
 }
 
-.overlay.is-hidden .modal-form {
-  transform: translate(-50%, -50%) scale(0.9);
-}
-
 .modal-form {
   position: absolute;
   top: 50%;
@@ -28,6 +24,10 @@
 
   transform: translate(-50%, -50%) scale(1);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  .overlay.is-hidden & {
+    transform: translate(-50%, -50%) scale(0.9);
+  }
 }
 
 .button-close {
@@ -74,6 +74,10 @@
   cursor: pointer;
   outline: transparent;
   transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:focus {
+    border: 1px solid $accent-color;
+  }
 }
 
 .form-icon {
@@ -81,6 +85,10 @@
   top: 11px;
   left: 16px;
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  .form-input:focus ~ & {
+    fill: $accent-color;
+  }
 }
 
 .form-label {
@@ -92,24 +100,15 @@
     color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     font-size 250ms cubic-bezier(0.4, 0, 0.2, 1),
     line-height 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
 
-.form-input:focus + .form-label,
-.form-input:not(:placeholder-shown) + .form-label {
-  transform: translate(-30px, -30px);
+  .form-input:focus + &,
+  .form-input:not(:placeholder-shown) + & {
+    font-size: 12px;
+    line-height: 1.17;
+    color: $accent-color;
 
-  font-size: 12px;
-  line-height: 1.17;
-  color: $accent-color;
-}
-
-.form-input:focus ~ .form-icon {
-  fill: $accent-color;
-}
-
-.form-input:focus,
-.form-area-comment:focus {
-  border: 1px solid $accent-color;
+    transform: translate(-30px, -30px);
+  }
 }
 
 .form-area-comment {
@@ -124,6 +123,10 @@
   border: 1px solid rgba(33, 33, 33, 0.2);
   box-sizing: border-box;
   border-radius: 4px;
+
+  &:focus {
+    border: 1px solid $accent-color;
+  }
 }
 
 .form-label-comment {
@@ -135,15 +138,15 @@
     color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     font-size 250ms cubic-bezier(0.4, 0, 0.2, 1),
     line-height 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
 
-.form-area-comment:not(:placeholder-shown) + .form-label-comment,
-.form-area-comment:focus + .form-label-comment {
-  transform: translate(-5px, -30px);
+  .form-area-comment:not(:placeholder-shown) + &,
+  .form-area-comment:focus + & {
+    font-size: 12px;
+    line-height: 1.17;
+    color: $accent-color;
 
-  font-size: 12px;
-  line-height: 1.17;
-  color: $accent-color;
+    transform: translate(-5px, -30px);
+  }
 }
 
 .check-icon {
@@ -159,6 +162,12 @@
 
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  .form-checkbox:checked + & {
+    background-color: $accent-color;
+    border: transparent;
+    background-image: url("data:image/svg+xml,%3Csvg width='16' height='15' viewBox='0 0 16 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.95703 7.75166L3.88825 7.68604L3.81923 7.75141L2.93123 8.59258L2.85486 8.66492L2.93097 8.73753L6.42671 12.0724L6.49574 12.1382L6.56476 12.0724L14.069 4.91352L14.1449 4.84116L14.069 4.76881L13.1873 3.92764L13.1183 3.86183L13.0493 3.92761L6.49577 10.1735L3.95703 7.75166Z' fill='white' stroke='white' stroke-width='0.2'/%3E%3C/svg%3E");
+  }
 }
 
 .form-checkbox {
@@ -170,12 +179,6 @@
   padding: 0;
   clip: rect(0 0 0 0);
   overflow: hidden;
-}
-
-.form-checkbox:checked + .check-icon {
-  background-color: $accent-color;
-  border: transparent;
-  background-image: url("data:image/svg+xml,%3Csvg width='16' height='15' viewBox='0 0 16 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.95703 7.75166L3.88825 7.68604L3.81923 7.75141L2.93123 8.59258L2.85486 8.66492L2.93097 8.73753L6.42671 12.0724L6.49574 12.1382L6.56476 12.0724L14.069 4.91352L14.1449 4.84116L14.069 4.76881L13.1873 3.92764L13.1183 3.86183L13.0493 3.92761L6.49577 10.1735L3.95703 7.75166Z' fill='white' stroke='white' stroke-width='0.2'/%3E%3C/svg%3E");
 }
 
 .policy-title {
@@ -194,28 +197,6 @@
   color: $accent-color;
   text-decoration: underline;
   cursor: pointer;
-}
-.button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 200px;
-  height: 50px;
-  margin-left: auto;
-  margin-right: auto;
-
-  background: #2196f3;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-  border: transparent;
-  border-radius: 4px;
-  cursor: pointer;
-
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 1.87;
-  letter-spacing: 0.06em;
-
-  color: $title-light-color;
 }
 
 .is-hidden {
