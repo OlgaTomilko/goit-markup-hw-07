@@ -1,10 +1,18 @@
 .navigation {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: baseline;
+  -ms-flex-pack: baseline;
   justify-content: baseline;
 }
 
 .navigation-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
@@ -37,18 +45,30 @@
   border-bottom: 1px solid #ececec;
 
   .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
   }
 }
 
 .header-address-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
 .header-mail-link {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   margin-right: 50px;
   padding-bottom: 32px;
@@ -62,7 +82,11 @@
 }
 
 .header-tel-link {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   padding-bottom: 32px;
   @extend %font-and-transition-for-nav-link;
@@ -91,7 +115,10 @@
 }
 
 .address-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-line-pack: center;
   align-content: center;
 }
 
